@@ -42,8 +42,30 @@
 
     <Button
         android:id="@+id/btnLogIn"
+        android:layout_width="342dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:background="@android:color/holo_green_light"
+        android:text="Entrar"
+        android:textColor="@android:color/white" />
+
+    <TextView
+        android:id="@+id/txtCad"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Entrar" />
+        android:gravity="center"
+        android:paddingTop="150px"
+        android:text="Não possui conta? Cadastre-se!" />
+
+    <Button
+        android:id="@+id/btnCadUser"
+        android:layout_width="190dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="95dp"
+        android:layout_marginTop="20px"
+        android:background="@android:color/holo_blue_dark"
+        android:gravity="center"
+        android:text="CRIAR CONTA"
+        android:textColor="@android:color/white" />
 
 </LinearLayout>

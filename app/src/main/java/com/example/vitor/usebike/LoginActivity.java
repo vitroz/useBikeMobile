@@ -1,8 +1,12 @@
 package com.example.vitor.usebike;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ListView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -20,14 +24,27 @@ import java.net.URL;
 
 public class LoginActivity extends AppCompatActivity {
 
+    private Button btnCadUser;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        System.out.println("TESTE API");
-
         new JSONTask().execute("http://192.168.1.120:3000/usuarios");
+
+        this.btnCadUser = (Button) findViewById(R.id.btnCadUser);
+
+        this.btnCadUser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent1 = new Intent(LoginActivity.this,
+                        RegisterUserActivity.class);
+                startActivity(intent1);
+            }
+
+        });
+
 
     }
 
@@ -60,15 +77,17 @@ public class LoginActivity extends AppCompatActivity {
                 JSONObject parentObject = new JSONObject(finalJson);
                 JSONArray  parentArray = parentObject.getJSONArray("users");
 
-                JSONObject finalObject = parentArray.getJSONObject(0);
+                for(int i = 0; i < parentArray.length(); i++) {
+                    JSONObject finalObject = parentArray.getJSONObject(i);
 
-                String usr_name = finalObject.getString("usr_username");
-                String usr_email = finalObject.getString("usr_email");
+                    String usr_name = finalObject.getString("usr_username");
+                    String usr_email = finalObject.getString("usr_email");
 
-                System.out.println("Teste API");
-                System.out.println(usr_name);
-                System.out.println(usr_email);
-                
+                    System.out.println("");
+                    System.out.println(usr_name);
+                    System.out.println(usr_email);
+                }
+
 
                 return buffer.toString();
 
