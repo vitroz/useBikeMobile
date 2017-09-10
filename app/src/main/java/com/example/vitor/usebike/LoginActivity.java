@@ -4,6 +4,10 @@ import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -51,12 +55,29 @@ public class LoginActivity extends AppCompatActivity {
                     buffer.append(line);
                 }
 
+                String finalJson = buffer.toString();
+
+                JSONObject parentObject = new JSONObject(finalJson);
+                JSONArray  parentArray = parentObject.getJSONArray("users");
+
+                JSONObject finalObject = parentArray.getJSONObject(0);
+
+                String usr_name = finalObject.getString("usr_username");
+                String usr_email = finalObject.getString("usr_email");
+
+                System.out.println("Teste API");
+                System.out.println(usr_name);
+                System.out.println(usr_email);
+                
+
                 return buffer.toString();
 
 
             } catch (MalformedURLException e) {
                 e.printStackTrace();
             } catch (IOException e) {
+                e.printStackTrace();
+            } catch (JSONException e) {
                 e.printStackTrace();
             } finally {
                 if (connection != null) {
