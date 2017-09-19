@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">usebike</string>
+    <string name="server_ip">http://172.31.14.205:3000</string>
 </resources>

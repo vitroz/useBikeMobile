@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.vitor.usebike.UserViewActivity">
+
+    <TabHost
+        android:id="@+id/tabHost"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></TabWidget>
+
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:id="@+id/LogOut"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/background_light"
+                    android:orientation="vertical">
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/User"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/background_light"
+                    android:orientation="vertical"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:id="@+id/lblHeader"
+                        android:layout_width="match_parent"
+                        android:layout_height="29dp"
+                        android:layout_marginBottom="50dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="30dp"
+                        android:text="PERFIL"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="136dp"
+                        android:layout_height="29dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="30dp"
+                        android:text="Usuário" />
+
+                    <EditText
+                        android:id="@+id/txtUsernameData"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="30dp"
+                        android:background="@android:color/transparent"
+                        android:ems="10"
+                        android:enabled="true"
+                        android:focusable="false"
+                        android:inputType="textPersonName" />
+
+                    <TextView
+                        android:id="@+id/lblEmail"
+                        android:layout_width="162dp"
+                        android:layout_height="29dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="30dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="0.03"
+                        android:text="Email" />
+
+                    <EditText
+                        android:id="@+id/txtEmailData"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="30dp"
+                        android:background="@android:color/transparent"
+                        android:ems="10"
+                        android:focusable="false"
+                        android:inputType="textPersonName" />
+
+                    <TextView
+                        android:id="@+id/lblDtNasc"
+                        android:layout_width="match_parent"
+                        android:layout_height="29dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="30dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="0.03"
+                        android:text="Data de Nascimento" />
+
+                    <EditText
+                        android:id="@+id/txtDtNascimentoData"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="30dp"
+                        android:background="@android:color/transparent"
+                        android:ems="10"
+                        android:focusable="false"
+                        android:inputType="textPersonName" />
+
+                    <TextView
+                        android:id="@+id/lblBikesUser"
+                        android:layout_width="wrap_content"
+                        android:layout_height="29dp"
+                        android:layout_marginLeft="120dp"
+                        android:layout_marginTop="50dp"
+                        android:text="Bikes Reservadas"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <ListView
+                        android:id="@+id/listbikes"
+                        android:layout_width="match_parent"
+                        android:layout_height="163dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/Bikes"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/background_light"
+                    android:orientation="vertical"
+                    android:weightSum="1">
+
+                    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+                        xmlns:tools="http://schemas.android.com/tools"
+                        android:id="@+id/map"
+                        android:name="com.google.android.gms.maps.SupportMapFragment"
+                        android:layout_width="match_parent"
+                        android:layout_height="154dp"
+                        android:layout_weight="0.53"
+                        tools:context="com.example.mapwithmarker.MapsMarkerActivity" />
+
+                    <com.google.android.gms.maps.MapView
+                        android:id="@+id/mapView"
+                        android:layout_width="match_parent"
+                        android:layout_height="19dp"
+                        android:apiKey="AIzaSyBJMyFFhkQtKyIe5bjW-hREP0NzF03NC5E"
+                        android:visibility="invisible" />
+
+                    <ImageView
+                        android:id="@+id/imageView2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        app:srcCompat="@mipmap/usebike_logo" />
+                </LinearLayout>
+
+            </FrameLayout>
+        </LinearLayout>
+    </TabHost>
+
+</LinearLayout>

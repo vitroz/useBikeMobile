@@ -11,50 +11,58 @@
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="360px"
-        app:srcCompat="@mipmap/ic_launcher" />
+        android:paddingBottom="80dp"
+        android:paddingTop="100dp"
+        app:srcCompat="@mipmap/usebike_logo" />
 
-    <EditText
-        android:id="@+id/editText"
+    <TextView
+        android:id="@+id/lblUser"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
+        android:gravity="center"
         android:text="Usuario ou Email" />
 
-    <TextView
-        android:id="@+id/txtUser"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/txtUser"
+        android:layout_width="227dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/lblPass"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
+        android:gravity="center"
         android:text="Senha" />
 
-    <TextView
-        android:id="@+id/txtPass"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+    <EditText
+        android:id="@+id/txtPassword"
+        android:layout_width="227dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="textPassword" />
 
     <Button
         android:id="@+id/btnLogIn"
-        android:layout_width="342dp"
+        android:layout_width="120dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
         android:background="@android:color/holo_green_light"
         android:text="Entrar"
         android:textColor="@android:color/white" />
 
     <TextView
-        android:id="@+id/txtCad"
+        android:id="@+id/lblCad"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
         android:gravity="center"
-        android:paddingTop="150px"
         android:text="Não possui conta? Cadastre-se!" />
 
     <Button
